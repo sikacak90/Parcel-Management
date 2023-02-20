@@ -37,7 +37,7 @@ class Test extends Component {
   }
      
   componentDidMount(){
-    fetch("http://localhost:3001/parcel/getParcel")
+    fetch("https://api.akisyah.my/parcel/getParcel")
     .then(response => response.json())
     .then(allParcel => this.setState({allParcel}))
     .catch(error => console.error(error));
@@ -117,7 +117,7 @@ class Test extends Component {
           Status : "Tracking",
           userId : this.state.urlId
         }
-        fetch("http://localhost:3001/parcel/add",{
+        fetch("https://api.akisyah.my/parcel/add",{
           method: 'POST',
           headers:{
             'Content-Type' : 'application/json'

@@ -58,7 +58,7 @@ const Register = () => {
       email: email,
       password: password,
     };
-    fetch("http://localhost:3001/user/add", {
+    fetch("https://api.akisyah.my/user/add", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
