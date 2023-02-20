@@ -1,7 +1,7 @@
 import express from 'express';
 import nodemailer from 'nodemailer';
 import crypto from 'crypto'
-import User from '../models/user.js';
+//import User from '../models/user.js';
 
 let router = express.Router();
 

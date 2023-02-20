@@ -25,7 +25,7 @@ router.route("/add").post(async (req, res) => {
       Status,
       userId,
     });
-    console.log(newParcel);
+    //console.log(newParcel);
     console.log("Tracking Captured " + req.body.parcelId);
     res.status(201).json({ message: parcelId + " Added" });
   } catch (err) {
