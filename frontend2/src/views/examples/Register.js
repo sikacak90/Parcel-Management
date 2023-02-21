@@ -47,7 +47,7 @@ const Register = () => {
 
   const handleKeyDown = (e) => {
     if (e.key === "Enter" && buttonRef.current) {
-      console.log("Enter key pressed!");
+      //console.log("Enter key pressed!");
       buttonRef.current.click();
     }
   };
