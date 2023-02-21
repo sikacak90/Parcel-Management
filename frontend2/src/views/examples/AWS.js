@@ -88,9 +88,9 @@ const AWS = (props) => {
   };
 
   const handleSubmit = async (e) => {
-    console.log('Tracking No ' + parcelId + parcelData);
+    console.log('Tracking No ' + parcelId);
     var flag = 0;
-    console.log("Printing List");
+    //console.log("Printing List");
     for (var i = 0; i < parcelData.length; i++) {
       if (parcelData[i].parcelId === parcelId) {
         //console.log("Parcel Already Exists Bhai");

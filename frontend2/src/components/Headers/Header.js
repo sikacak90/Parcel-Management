@@ -43,11 +43,11 @@ const Header = (props) => {
   const lastMonth = date.getMonth();
 
   const todayParcel = () => {
-    console.log(data);
+    //console.log(data);
     let count = 0;
     data.map((item) => {
       const parcelDate = item.Date.split(".");
-      console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
+      //console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
       if (parcelDate[0] == today && parcelDate[1] == month) {
         count++;
       }
@@ -59,7 +59,7 @@ const Header = (props) => {
     let count = 0;
     data.map((item) => {
       const parcelDate = item.Date.split(".");
-      console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
+      //console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
       if (parcelDate[0] == yesterday && parcelDate[1] == month) {
         count++;
       }
@@ -71,7 +71,7 @@ const Header = (props) => {
     let count = 0;
     data.map((item) => {
       const parcelDate = item.Date.split(".");
-      console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
+      //console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
       if (parcelDate[1] == month) {
         count++;
       }
@@ -83,7 +83,7 @@ const Header = (props) => {
     let count = 0;
     data.map((item) => {
       const parcelDate = item.Date.split(".");
-      console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
+      //console.log(parcelDate[0] + " " + parcelDate[1] + " " + parcelDate[2]);
       if (parcelDate[1] == lastMonth) {
         count++;
       }
