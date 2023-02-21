@@ -140,8 +140,8 @@ const Sidebar = (props) => {
               <DropdownItem className="noti-title" header tag="div">
                 <h6 className="text-overflow m-0">Welcome!</h6>
               </DropdownItem>
-              <DropdownItem href="/auth/login" onClick={(e) => e.preventDefault()}>
-                <span>Logout</span>
+              <DropdownItem href="/auth/login">
+                <span>Logout!</span>
               </DropdownItem>
             </DropdownMenu>
           </UncontrolledDropdown>
