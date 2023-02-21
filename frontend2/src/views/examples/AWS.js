@@ -73,7 +73,7 @@ const AWS = (props) => {
   const refreshData = () => {
     //console.log("Refreshing Data");
     setParcelData([]);
-    fetch(`https://api.akisyah.my/parcel/getParcel/${urlID}`)
+    fetch(`http://localhost:3001/parcel/getParcel/${urlID}`)
       .then((response) => response.json())
       .then((data) => setParcelData(data))
       .catch((error) => console.error(error));
@@ -88,9 +88,9 @@ const AWS = (props) => {
   };
 
   const handleSubmit = async (e) => {
-    console.log('Tracking No ' + parcelId);
+    console.log('Tracking No ' + parcelId + parcelData);
     var flag = 0;
-    //console.log("Printing List");
+    console.log("Printing List");
     for (var i = 0; i < parcelData.length; i++) {
       if (parcelData[i].parcelId === parcelId) {
         //console.log("Parcel Already Exists Bhai");
@@ -101,6 +101,10 @@ const AWS = (props) => {
 
     if (parcelId === "") {
       flag = 2;
+    }
+
+    if (parcelId.length > 15) {
+      flag = 3;
     }
 
     //console.log("Printing List done");
@@ -136,7 +140,7 @@ const AWS = (props) => {
 
       /// i will add this function
       try {
-        const res = await axios.post("https://api.akisyah.my/parcel/add", data, {
+        const res = await axios.post("http://localhost:3001/parcel/add", data, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -161,7 +165,7 @@ const AWS = (props) => {
          
       }
 
-      // fetch("https://api.akisyah.my/parcel/add", {
+      // fetch("http://localhost:3001/parcel/add", {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json",
@@ -187,6 +191,12 @@ const AWS = (props) => {
     } else if (flag === 2) {
       addToast("Please Enter a Valid Parcel ID", {
         appearance: 'error',
+        autoDismiss: true,
+      });
+      // setError("Please Enter a Valid Parcel ID");
+    } else if (flag === 3) {
+      addToast("AWB Too Long", {
+        appearance: 'info',
         autoDismiss: true,
       });
       // setError("Please Enter a Valid Parcel ID");

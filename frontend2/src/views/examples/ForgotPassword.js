@@ -26,7 +26,7 @@ import {
     const handleSubmit = async (e) => {
       e.preventDefault();
       try{
-        const reponse = await axios.post('https://api.akisyah.my/forgot-password/forgot-password', {email});
+        const reponse = await axios.post('http://localhost:3001/forgot-password/forgot-password', {email});
         setMessage(reponse.data.message);
       }
       catch(error){
