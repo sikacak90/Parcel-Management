@@ -57,7 +57,7 @@ const AdminNavbar = (props) => {
                   <h6 className="text-overflow m-0">Welcome!</h6>
                 </DropdownItem>
                 <DropdownItem href="/auth/login">
-                  <span>Logout</span>
+                  <span>Logout!</span>
                 </DropdownItem>
               </DropdownMenu>
             </UncontrolledDropdown>
