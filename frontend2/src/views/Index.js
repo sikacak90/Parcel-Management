@@ -49,7 +49,7 @@ const Index = (props) => {
   const [searchQuery, setSearchQuery] = useState('');
   useEffect(() => {
     console.log(urlID);
-    fetch(`https://api.akisyah.my/parcel/getParcel/${urlID}`)
+    fetch(`http://localhost:3001/parcel/getParcel/${urlID}`)
       .then(response => response.json())
       .then(data => {
         //console.log("DIS DA DATA: " + data);
@@ -116,7 +116,7 @@ const Index = (props) => {
         }
       }
       console.log(itemId);
-      fetch(`https://api.akisyah.my/parcel/updateAll/${itemId}`, {
+      fetch(`http://localhost:3001/parcel/updateAll/${itemId}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
@@ -138,7 +138,7 @@ const Index = (props) => {
 
   const handleStatus = (id) => (event) => {
     console.log(id);
-    fetch(`https://api.akisyah.my/parcel/update/${id}`, {
+    fetch(`http://localhost:3001/parcel/update/${id}`, {
       method: "PUT",
       headers: {
         "Content-Type": "application/json",
@@ -225,7 +225,7 @@ const Index = (props) => {
   <div class="dropdown-content">
   <Button style={{width:'98%',borderRadius:'10px'}} onClick={() => {
    Axios
-     .delete(`https://api.akisyah.my/parcel/del/${item._id}`)
+     .delete(`http://localhost:3001/parcel/del/${item._id}`)
      .then((response) => console.log(response.data))
      .catch((error) => console.log(error));
     window.location.reload();

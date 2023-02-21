@@ -30,7 +30,7 @@ const Header = (props) => {
   const [urlId, setUrlId] = useState(props.id);
 
   useEffect(() => {
-    fetch(`https://api.akisyah.my/parcel/getParcel/${urlId}`)
+    fetch(`http://localhost:3001/parcel/getParcel/${urlId}`)
     .then(response => response.json())
     .then(data => setData(data))
     .catch(error => console.error(error))
