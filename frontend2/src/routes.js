@@ -10,13 +10,15 @@ import Register from "views/examples/Register.js";
 import ForgotPassword from "views/examples/ForgotPassword.js";
 import Test from "views/examples/QR.js";
 
+
 var routes = [
   {
-    path: `/index/:id`,
+    path: "/index/:id",
     name: "Dashboard",
     icon: "ni ni-tv-2 text-primary",
     component: Index,
-    layout: "/admin"
+    layout: "/admin",
+    invisible: true
   },
   {
     path: "/InsertAWB/:id",

@@ -17,7 +17,7 @@ import {
 import React, {useState, useEffect, useRef} from 'react';
 import {useHistory} from 'react-router-dom';
 
-const Login = () => {
+var Login = () => {
 
   const history = useHistory();
   const [data, setData] = useState();
@@ -41,7 +41,7 @@ const Login = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/user/getUser")
+    fetch("https://api.akisyah.my/user/getUser")
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error(error));
@@ -64,7 +64,7 @@ const Login = () => {
     history.push("/auth/register");
   };
 
-  const handleSubmit = (e) => {
+  var handleSubmit = (e) => {
     e.preventDefault();
     var flag = 0;
     data.map((item) => {

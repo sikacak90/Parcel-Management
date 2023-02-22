@@ -66,11 +66,11 @@ const Admin = (props) => {
       <div className="main-content" ref={mainContent}>
         <AdminNavbar
           {...props}
-          brandText={"Dashboard"}
+          brandText={"Your Dashboard"}
         />
         <Switch>
           {getRoutes(routes)}
-          <Redirect from="*" to="/admin/index" />
+          <Redirect from="*" to="/admin/index/" />
         </Switch>
         <Container fluid>
           <AdminFooter />

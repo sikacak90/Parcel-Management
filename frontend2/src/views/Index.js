@@ -48,7 +48,7 @@ const Index = (props) => {
   const history = useHistory();
   const [searchQuery, setSearchQuery] = useState('');
   useEffect(() => {
-    console.log(urlID);
+    //console.log(urlID);
     fetch(`http://localhost:3001/parcel/getParcel/${urlID}`)
       .then(response => response.json())
       .then(data => {

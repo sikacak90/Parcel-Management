@@ -53,7 +53,6 @@ import {
 } from "reactstrap";
 
 var ps;
-
 const Sidebar = (props) => {
   const [collapseOpen, setCollapseOpen] = useState();
   // verifies if routeName is the one active (in browser input)
@@ -74,7 +73,7 @@ const Sidebar = (props) => {
       return (
         <NavItem key={key}>
           <NavLink
-            to={prop.layout + prop.path}
+            to={prop.name === "Dashboard"? props.location.pathname: prop.layout + prop.path}
             tag={NavLinkRRD}
             onClick={closeCollapse}
             activeClassName="active"
@@ -204,7 +203,9 @@ const Sidebar = (props) => {
 };
 
 Sidebar.defaultProps = {
+  
   routes: [{}]
+  
 };
 
 Sidebar.propTypes = {
@@ -217,6 +218,7 @@ Sidebar.propTypes = {
     // outterLink is for links that will direct the user outside the app
     // it will be rendered as simple <a href="...">...</a> tag
     outterLink: PropTypes.string,
+    
     // the image src of the logo
     imgSrc: PropTypes.string.isRequired,
     // the alt for the img
