@@ -199,7 +199,6 @@ const AWS = (props) => {
         appearance: 'info',
         autoDismiss: true,
       });
-      // setError("Please Enter a Valid Parcel ID");
     }
 
     setText("Insert AWB Number");
