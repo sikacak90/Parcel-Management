@@ -25,7 +25,7 @@ const AWS = (props) => {
   const { id } = useParams();
   const [urlID, setUrlID] = useState(id);
   const [isVisible, setIsVisible] = useState(false);
-  const [text, setText] = useState("Insert AWB Code");
+  const [text, setText] = useState("Insert AWB Number");
   const inputRef = useRef(null);
   const [inputValue, setInputValue] = useState("");
   const [isRunning, setIsRunning] = useState(false);
@@ -149,7 +149,7 @@ const AWS = (props) => {
         addToast(res.data.message, {
           appearance: 'success',
           autoDismiss: true,
-          autoDismissTimeout : 3000,
+          autoDismissTimeout : 5000,
         });
       
       } catch (err) {
@@ -160,7 +160,7 @@ const AWS = (props) => {
           addToast(message, {
             appearance: 'warning',
             autoDismiss: true,
-            autoDismissTimeout : 3000,
+            autoDismissTimeout : 5000,
           });
          
       }
@@ -185,7 +185,7 @@ const AWS = (props) => {
       addToast(parcelId + " Duplicated", {
         appearance: 'error',
         autoDismiss: true,
-        autoDismissTimeout : 3000,
+        autoDismissTimeout : 5000,
       });
       
     } else if (flag === 2) {
@@ -237,7 +237,7 @@ const AWS = (props) => {
           className="bg-secondary shadow border-0"
           style={{
             maxWidth: "600px",
-            marginTop: "120px",
+            marginTop: "250px",
             display: "flex",
             alignItems: "center",
             "@media (max-width: 500px)": {
@@ -246,9 +246,9 @@ const AWS = (props) => {
             },
           }}
         >
-          <CardBody className="px-lg-5 py-lg-5">
+          <CardBody className="px-lg-12 py-lg-12">
             <Form role="form">
-              <FormGroup className="mb-3">
+              <FormGroup className="mb-1">
                 <InputGroup className="input-group-alternative">
                   <Input
                     placeholder={text}
@@ -258,9 +258,6 @@ const AWS = (props) => {
                     required
                     innerRef={inputRef}
                   />
-                  <Button onClick={handleCamera}>
-                    <i className="fa fa-camera" />
-                  </Button>
                 </InputGroup>
               </FormGroup>
             </Form>
