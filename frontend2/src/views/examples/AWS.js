@@ -107,6 +107,10 @@ const AWS = (props) => {
       flag = 3;
     }
 
+    if (parcelId.length < 8) {
+      flag = 4;
+    }
+
     //console.log("Printing List done");
 
     if (flag === 0) {
@@ -159,8 +163,6 @@ const AWS = (props) => {
           err.toString();
           addToast(message, {
             appearance: 'warning',
-            autoDismiss: true,
-            autoDismissTimeout : 5000,
           });
          
       }
@@ -181,21 +183,24 @@ const AWS = (props) => {
       //   .catch((e) => {
       //     console.log("e", e);
       //   });
+
     } else if (flag === 1) {
       addToast(parcelId + " Duplicated", {
         appearance: 'error',
-        autoDismiss: true,
-        autoDismissTimeout : 5000,
       });
       
     } else if (flag === 2) {
       addToast("Please Enter a Valid Parcel ID", {
         appearance: 'error',
-        autoDismiss: true,
       });
       // setError("Please Enter a Valid Parcel ID");
     } else if (flag === 3) {
       addToast("AWB Too Long", {
+        appearance: 'info',
+        autoDismiss: true,
+      });
+    } else if (flag === 4) {
+      addToast("AWB Too Short", {
         appearance: 'info',
         autoDismiss: true,
       });

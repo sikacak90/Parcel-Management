@@ -14,10 +14,9 @@ router.route("/add").post(async (req, res) => {
   const duplicate = await Parcel.findOne({ parcelId: parcelId }).exec();
 
   if (duplicate) {
-    console.log(parcelId + " Already Scanned");
-    return res.status(400).json({ message: parcelId + " Already Scanned" });
-  }
-  try {
+    console.log(parcelId + " Duplicated");
+    return res.status(400).json({ message: parcelId + " Duplicated" });
+  } try {
     const newParcel = await Parcel.create({
       parcelId,
       Date,
