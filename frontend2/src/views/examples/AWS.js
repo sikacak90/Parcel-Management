@@ -1,5 +1,4 @@
 import {
-  Button,
   Card,
   CardBody,
   FormGroup,
@@ -31,12 +30,11 @@ function err2beep() {
 }
 
 const AWS = (props) => {
-  const [awscode, setAwscode] = useState("");
   const [parcelId, setparcelId] = useState("");
   const [error, setError] = useState("");
   const [success, setSuccess] = useState("");
   const [parcelData, setParcelData] = useState([]);
-  const [showMessage, setShowMessage] = useState(true);
+  const [setShowMessage] = useState(true);
   const { id } = useParams();
   const [urlID, setUrlID] = useState(id);
   const [isVisible, setIsVisible] = useState(false);
@@ -90,7 +88,7 @@ const AWS = (props) => {
   const refreshData = () => {
     //console.log("Refreshing Data");
     setParcelData([]);
-    fetch(`http://localhost:3001/parcel/getParcel/${urlID}`)
+    fetch(`https://api.akisyah.my/parcel/getParcel/${urlID}`)
       .then((response) => response.json())
       .then((data) => setParcelData(data))
       .catch((error) => console.error(error));
@@ -161,7 +159,7 @@ const AWS = (props) => {
 
       /// i will add this function
       try {
-        const res = await axios.post("http://localhost:3001/parcel/add", data, {
+        const res = await axios.post("https://api.akisyah.my/parcel/add", data, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -188,7 +186,7 @@ const AWS = (props) => {
          
       }
 
-      // fetch("http://localhost:3001/parcel/add", {
+      // fetch("https://api.akisyah.my/parcel/add", {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json",
@@ -256,10 +254,6 @@ const AWS = (props) => {
     history.push("/admin/index/" + id);
   };
 
-  const handleCamera = () => {
-    var id = urlID;
-    history.push("/auth/camera/" + id);
-  };
 
   const handleInputChange = (event) => {
     setInputValue(event.target.value);

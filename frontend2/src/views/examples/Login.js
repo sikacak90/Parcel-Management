@@ -41,7 +41,7 @@ var Login = () => {
   }, []);
 
   useEffect(() => {
-    fetch("http://localhost:3001/user/getUser")
+    fetch("https://api.akisyah.my/user/getUser")
       .then(response => response.json())
       .then(data => setData(data))
       .catch(error => console.error(error));
