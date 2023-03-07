@@ -88,7 +88,7 @@ const AWS = (props) => {
   const refreshData = () => {
     //console.log("Refreshing Data");
     setParcelData([]);
-    fetch(`https://api.akisyah.my/parcel/getParcel/${urlID}`)
+    fetch(`http://localhost:3001/parcel/getParcel/${urlID}`)
       .then((response) => response.json())
       .then((data) => setParcelData(data))
       .catch((error) => console.error(error));
@@ -159,7 +159,7 @@ const AWS = (props) => {
 
       /// i will add this function
       try {
-        const res = await axios.post("https://api.akisyah.my/parcel/add", data, {
+        const res = await axios.post("http://localhost:3001/parcel/add", data, {
           headers: {
             "Content-Type": "application/json",
           },
@@ -186,7 +186,7 @@ const AWS = (props) => {
          
       }
 
-      // fetch("https://api.akisyah.my/parcel/add", {
+      // fetch("http://localhost:3001/parcel/add", {
       //   method: "POST",
       //   headers: {
       //     "Content-Type": "application/json",
