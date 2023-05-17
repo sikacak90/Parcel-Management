@@ -118,7 +118,7 @@ const AWS = (props) => {
       flag = 2;
     }
 
-    if (parcelId.length > 15) {
+    if (parcelId.length > 16) {
       flag = 3;
     }
 
